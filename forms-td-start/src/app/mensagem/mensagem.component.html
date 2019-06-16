@@ -1,0 +1,3 @@
+<div *ngIf="show" [ngClass]="{'mensagem': classCss, 'mensagemAnimate': !classCss}">
+  Existem dados invalidos, cheque os parametros <button class="botao" (click)="show = false"> X </button>
+</div>

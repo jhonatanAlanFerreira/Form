@@ -1,4 +1,5 @@
 <div class="container">
+    <app-mensagem></app-mensagem>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form [formGroup]="formulario" (ngSubmit)="submited()">
@@ -8,12 +9,12 @@
               <div [formGroupName] = 'i'>
                 <div class="form-group">
                   <label for="username">Username</label>
-                  <input formControlName = "vc_nome" type="text" id="username" class="form-control" [ngClass]="{'invalido': !formulario.get('array.'+i+'.vc_nome').valid && formulario.get('array.'+i+'.vc_nome').touched}">
+                  <input (focus)="removeErro()" formControlName = "vc_nome" type="text" id="username" class="form-control" [ngClass]="{'invalido': !formulario.get('array.'+i+'.vc_nome').valid && formulario.get('array.'+i+'.vc_nome').touched}">
                   <span *ngIf="!formulario.get('array.'+i+'.vc_nome').valid && formulario.get('array.'+i+'.vc_nome').touched" style="color:red">Informe um nome</span>
                 </div>
                 <div class="form-group">
                   <label for="username">Email</label>
-                  <input formControlName = "vc_email" type="text" id="username" class="form-control" [ngClass]="{'invalido': !formulario.get('array.'+i+'.vc_email').valid && formulario.get('array.'+i+'.vc_email').touched}">
+                  <input (focus)="removeErro()" formControlName = "vc_email" type="text" id="username" class="form-control" [ngClass]="{'invalido': !formulario.get('array.'+i+'.vc_email').valid && formulario.get('array.'+i+'.vc_email').touched}">
                   <span *ngIf="!formulario.get('array.'+i+'.vc_email').valid && formulario.get('array.'+i+'.vc_email').touched" style="color:red">Informe um e-mail válido</span>
                   <div class="col-md-12 text-right" style="margin-top:10px">
                   <button class="btn btn-danger" (click)="deleteGroup(i)">Deletar</button>

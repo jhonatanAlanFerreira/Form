@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { MensagemComponent } from './mensagem/mensagem.component';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+  @ViewChild(MensagemComponent) erro;
 
   constructor( private fb: FormBuilder){}
 
@@ -46,7 +49,12 @@ submited(){
     else {
       this.formulario.markAllAsTouched();
       console.log("Existem dados invalidos");
+      this.erro.change();
     }
+  }
+
+  removeErro(){
+    this.erro.show = false;
   }
 
   deleteGroup(i){
