@@ -41,7 +41,12 @@ submited(){
       email: this.formulario.get(`array.${i}.vc_email`).value
     });
     
+    if(this.formulario.valid)
     console.log("DADOS -> ",dados);
+    else {
+      this.formulario.markAllAsTouched();
+      console.log("Existem dados invalidos");
+    }
 
   }
 
