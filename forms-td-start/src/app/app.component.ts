@@ -15,9 +15,16 @@ export class AppComponent implements OnInit {
 
 ngOnInit(){
   this.formulario = this.fb.group({
-    vc_nome: ['', Validators.required],
-    vc_email: ['', [Validators.required, Validators.email]]
+    array: this.fb.array([])
   });
+}
+
+addGroup(){
+  let grupo = this.fb.group({
+    vc_nome: ['', Validators.required],
+    vc_email: ['',[Validators.required, Validators.email]]
+  });
+  (<FormArray>this.formulario.get('array')).push( grupo );
 }
 
 submited(){
