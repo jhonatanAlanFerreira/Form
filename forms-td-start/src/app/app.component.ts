@@ -15,7 +15,12 @@ export class AppComponent implements OnInit {
 
 ngOnInit(){
   this.formulario = this.fb.group({
-    array: this.fb.array([])
+    array: this.fb.array([
+      this.fb.group({
+        vc_nome: ['', Validators.required],
+        vc_email: ['',[Validators.required, Validators.email]]
+      })
+    ])
   });
 }
 
@@ -28,6 +33,15 @@ addGroup(){
 }
 
 submited(){
+    let dados = [];
+
+    for (let i in this.formulario.get('array').value) 
+    dados.push({
+      nome: this.formulario.get(`array.${i}.vc_nome`).value,
+      email: this.formulario.get(`array.${i}.vc_email`).value
+    });
+    
+    console.log("DADOS -> ",dados);
 
   }
 
