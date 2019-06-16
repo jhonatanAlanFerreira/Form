@@ -47,7 +47,10 @@ submited(){
       this.formulario.markAllAsTouched();
       console.log("Existem dados invalidos");
     }
+  }
 
+  deleteGroup(i){
+    (<FormArray>this.formulario.get('array')).removeAt(i);
   }
 
 }
