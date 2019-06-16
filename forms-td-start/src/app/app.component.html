@@ -1,32 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+
       <form [formGroup]="formulario" (ngSubmit)="submited()">
         <div id="user-data">
           <div class="form-group">
             <label for="username">Username</label>
             <input formControlName = "vc_nome" type="text" id="username" class="form-control">
           </div>
-          <button class="btn btn-default" type="button">Suggest an Username</button>
-          <div class="form-group" formGroupName="email">
-            <label for="email">Mail</label>
-            <input formControlName="vc_email" type="text" id="email" class="form-control">
-            <input formControlName = "ch_checked" type="checkbox">
-          </div>
           <div class="form-group">
-            <label for="teste">Teste Validando</label>
-            <input id="teste" type="text" formControlName="validate" class="form-control">
+            <label for="username">Email</label>
+            <input formControlName = "vc_email" type="text" id="username" class="form-control">
           </div>
         </div>
-        <div class="form-group">
-          <label for="secret">Secret Questions</label>
-          <select id="secret" class="form-control">
-            <option value="pet">Your first Pet?</option>
-            <option value="teacher">Your first teacher?</option>
-          </select>
-        </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" style="margin-right:10px" type="submit">Submit</button>
+        <button class="btn btn-success" type="button">Adicionar</button>
       </form>
+
     </div>
   </div>
 </div>
