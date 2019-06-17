@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-mensagem',
@@ -9,14 +9,14 @@ export class MensagemComponent {
 
   constructor() { }
 
-  classCss;
-  show;
+  classCssErro;
+  showErro;
 
- public change(){
-  this.show = true;
-  this.classCss = true;
+ public erro(){
+  this.showErro = true;
+  this.classCssErro = true;
 
-  setTimeout(()=>this.classCss = false);
+  setTimeout(()=>this.classCssErro = false);
   }
 
 }

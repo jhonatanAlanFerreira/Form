@@ -10,7 +10,7 @@ import { MensagemComponent } from './mensagem/mensagem.component';
 })
 export class AppComponent implements OnInit {
 
-  @ViewChild(MensagemComponent) erro;
+  @ViewChild(MensagemComponent,{static:false}) erro;
 
   constructor( private fb: FormBuilder){}
 
@@ -49,12 +49,12 @@ submited(){
     else {
       this.formulario.markAllAsTouched();
       console.log("Existem dados invalidos");
-      this.erro.change();
+      this.erro.erro();
     }
   }
 
   removeErro(){
-    this.erro.show = false;
+    this.erro.showErro = false;
   }
 
   deleteGroup(i){

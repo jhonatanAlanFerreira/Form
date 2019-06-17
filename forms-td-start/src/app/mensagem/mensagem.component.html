@@ -1,3 +1,3 @@
-<div *ngIf="show" [ngClass]="{'mensagem': classCss, 'mensagemAnimate': !classCss}">
-  Existem dados invalidos, cheque os parametros <button class="botao" (click)="show = false"> X </button>
+<div *ngIf="showErro" [ngClass]="{'mensagemErro': classCssErro, 'mensagemAnimateErro': !classCssErro}">
+  Existem dados invalidos, cheque os parametros <button class="botao" (click)="showErro = false"> X </button>
 </div>
