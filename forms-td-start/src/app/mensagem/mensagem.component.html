@@ -1,7 +1,7 @@
 <div *ngIf="showErro" [ngClass]="{'mensagemErro': classCssErro, 'mensagemAnimateErro': !classCssErro}">
-  Existem dados invalidos, cheque os parametros 
+  Existem dados invalidos, cheque os campos e tente novamente 
 </div>
 
-<div *ngIf="showEnviado" [ngClass]="{'mensagemEnviado': classCssEnviado, 'mensagemAnimateEnviado': !classCssEnviado, 'hidden': hidden}">
+<div *ngIf="showEnviado" [ngClass]="{'mensagemEnviado': classCssEnviado, 'mensagemAnimateEnviado': !classCssEnviado}">
   Dados enviados com sucesso
 </div>
