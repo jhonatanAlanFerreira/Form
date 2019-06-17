@@ -10,7 +10,7 @@ import { MensagemComponent } from './mensagem/mensagem.component';
 })
 export class AppComponent implements OnInit {
 
-  @ViewChild(MensagemComponent,{static:false}) erro;
+  @ViewChild(MensagemComponent,{static:false}) mensagem;
 
   constructor( private fb: FormBuilder){}
 
@@ -44,17 +44,15 @@ submited(){
       email: this.formulario.get(`array.${i}.vc_email`).value
     });
     
-    if(this.formulario.valid)
+    if(this.formulario.valid){
     console.log("DADOS -> ",dados);
+    this.mensagem.enviado();
+    }
     else {
       this.formulario.markAllAsTouched();
       console.log("Existem dados invalidos");
-      this.erro.erro();
+      this.mensagem.erro();
     }
-  }
-
-  removeErro(){
-    this.erro.showErro = false;
   }
 
   deleteGroup(i){
