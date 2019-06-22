@@ -4,10 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { BuscaPipe } from './busca.pipe';
+import { PaginaPipe } from './pagina.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuscaPipe,
+    PaginaPipe
   ],
   imports: [
     BrowserModule,
