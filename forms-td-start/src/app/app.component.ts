@@ -14,6 +14,15 @@ export class AppComponent implements OnInit {
   formulario: FormGroup;
 
 ngOnInit(){
+
+  window.addEventListener('scroll', ()=> {
+    let scrolled = document.documentElement.scrollHeight - window.innerHeight;
+
+    console.log(`scrolled -> ${scrolled} window -> ${window.scrollY}`)
+
+    if (scrolled <= window.scrollY) console.log("Final da página!");
+  })
+
   this.formulario = this.fb.group({
     array: this.fb.array([
       this.fb.group({
