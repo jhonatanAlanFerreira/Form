@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 
 @Component({
   selector: 'app-root',
@@ -9,28 +7,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
 
-  constructor( private fb: FormBuilder){}
+  constructor( ){}
 
-  formulario: FormGroup;
+  pessoas = [
+    {nome: 'jhonatan',idade: 25, teste:"testando"},
+    {nome: 'alan',idade: 34, teste:"testando"},
+    {nome: 'bertini',idade: 43, teste:"testando"},
+    {nome: 'ferreira',idade: 56, teste:"testando"},
+    {nome: 'jessica',idade: 56, teste:"testando"},
+    {nome: 'carolina',idade: 80, teste:"testando"}
+  ]
 
 ngOnInit(){
-  this.formulario = this.fb.group({
-    vc_nome: ['',Validators.required],
-    email: this.fb.group({
-      vc_email: ['', [Validators.email]],
-      ch_checked: [false, Validators.requiredTrue]
-    })
-  });
-
+ 
 }
 
-get control(){return this.formulario.controls}
-
-submited(){
- if(this.formulario.controls.vc_nome.valid) console.log("Foi enviado "+this.formulario.controls.vc_nome.value+" "+this.control.email['controls'].vc_email.value);
-}
-
-  suggestUserName() {
-    const suggestedName = 'Superuser';
-  }
 }

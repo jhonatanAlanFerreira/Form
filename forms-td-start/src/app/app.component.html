@@ -1,4 +1,12 @@
-<div class="cntr">
+ <div class="cntr">
   <input style="visibility: hidden" id="cbx" type="checkbox" />
   <label class="cbx" for="cbx"></label><label class="lbl" for="cbx">Make Magic</label>
+</div>
+
+<div class="container">
+  <app-select 
+  [dados]='pessoas' 
+  [colunas]='["Nome","Idade","Teste"]'
+  idUnica='nome'
+  ></app-select>
 </div>

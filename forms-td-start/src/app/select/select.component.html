@@ -1,0 +1,13 @@
+<div style="width: 300px;">
+<input class="form-control" type="text">
+<table>
+  <thead style="width: 100%;display: inline-table;">
+      <th *ngFor="let coluna of colunas">{{coluna}}</th>
+  </thead>
+  <tbody style="display: block;overflow-y: auto; max-height:200px">
+    <tr style="cursor: pointer" (click)='selecionar(dado[idUnica])' *ngFor="let dado of dados">
+      <td style="width: 300px" *ngFor="let valor of valores">{{dado[valor]}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
