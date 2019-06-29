@@ -30,8 +30,6 @@ export class SelectComponent implements OnInit {
   timeOut = null;
 
   @HostListener('document:click',['$event']) click(event){
-    console.log(event.target)
-    console.log(this.table.nativeElement)
    if(!this.table.nativeElement.contains(event.target)) this.open = false;
   }
 
