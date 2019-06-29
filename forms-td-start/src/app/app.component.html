@@ -1,12 +1,16 @@
- <div class="cntr">
-  <input style="visibility: hidden" id="cbx" type="checkbox" />
-  <label class="cbx" for="cbx"></label><label class="lbl" for="cbx">Make Magic</label>
-</div>
+<div style="margin-top:100px" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container">
 
-<div class="container">
-  <app-select 
-  [dados]='pessoas' 
-  [colunas]='["Nome","Idade","Teste"]'
-  idUnica='nome'
-  ></app-select>
+        <app-select 
+        [dados]='pessoas' 
+        [titulos]='["Nome","Idade"]'
+        [colunas]='["nome","idade"]'
+        idUnica='nome'
+        nome='nome'></app-select>
+        
+      </div>
+    </div>
+  </div>
 </div>

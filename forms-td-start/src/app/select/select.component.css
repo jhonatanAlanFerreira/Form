@@ -1,4 +1,30 @@
 tr:hover{
-    background-color: blue;
+    background-color: grey;
     color:white;
+}
+
+.tb{
+    width: 300px; 
+    padding: 10px 5px 10px 10px;
+    border-radius: 2%;
+}
+
+.border{
+    box-shadow: 1px 2px 2px grey;
+    border: 1px solid grey;
+}
+
+th{
+    color: grey;
+    font-weight: bold;
+}
+
+.squareDown{
+    content: " ";
+    left: 295px;
+    top: 45%;
+    position: absolute;
+    border: 7px solid;
+    border-color:grey transparent transparent transparent;
+    cursor: pointer;
 }
