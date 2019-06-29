@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-select',

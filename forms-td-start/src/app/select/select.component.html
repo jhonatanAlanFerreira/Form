@@ -1,10 +1,11 @@
 <div #table class="tb" [class.border]="open" (click)="open = true">
-  <input [(ngModel)]="_filtro" (keyup)="filtro()" *ngIf="open"  class="form-control" type="text">
+  <input [(ngModel)]="_filtro" (keyup)="filtro()" *ngIf="open"  class="form-control" style="margin-bottom:10px" type="text" placeholder="Pesquisar...">
   <input [(ngModel)]="value" style="pointer-events: none" *ngIf="!open"  class="form-control" readonly type="text">
-  <div *ngIf="!open" class="squareDown" (click)="open = true"></div>
+  <span class="x" *ngIf="open" (click)="_filtro = '';filtro()">x</span>
+  <div *ngIf="!open" class="squareDown"></div>
   <table *ngIf="open" class="table">
     <thead style="width: 100%;display: inline-table;">
-      <th *ngFor="let coluna of titulos">{{coluna}}</th>
+      <th *ngFor="let coluna of titulos"><u>{{coluna}}</u></th>
     </thead>
     <tbody *ngIf="!colunasEspecificadas" style="display: block;overflow-y: auto; max-height:200px">
       <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of filtrado">

@@ -21,10 +21,10 @@ tr:hover{
 
 th{
     color: grey;
-    font-weight: bold;
 }
 
 .squareDown{
+    pointer-events: none;
     content: " ";
     left: 295px;
     top: 45%;
@@ -32,4 +32,11 @@ th{
     border: 7px solid;
     border-color:grey transparent transparent transparent;
     cursor: pointer;
+}
+
+.x{
+    color: rgba(255, 0, 0, 0.678);
+    position: absolute;
+    left: 305px;
+    top:25px;
 }
