@@ -1,5 +1,5 @@
 <div class="tb" [class.border]="open">
-  <input *ngIf="open"  class="form-control" type="text">
+  <input [(ngModel)]="_filtro" (keyup)="filtro()" *ngIf="open"  class="form-control" type="text">
   <input [(ngModel)]="value" style="cursor: pointer" (click)="open = true" *ngIf="!open"  class="form-control" readonly type="text">
   <div *ngIf="!open" class="squareDown" (click)="open = true"></div>
   <table *ngIf="open" class="table">
@@ -7,12 +7,12 @@
       <th *ngFor="let coluna of titulos">{{coluna}}</th>
     </thead>
     <tbody *ngIf="!colunasEspecificadas" style="display: block;overflow-y: auto; max-height:200px">
-      <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of dados">
+      <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
         <td style="width: 300px" *ngFor="let valor of valores">{{dado[valor]}}</td>
       </tr>
     </tbody>
     <tbody *ngIf="colunasEspecificadas" style="display: block;overflow-y: auto; max-height:200px">
-      <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of dados">
+      <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
         <td style="width: 300px" *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
       </tr>
     </tbody>

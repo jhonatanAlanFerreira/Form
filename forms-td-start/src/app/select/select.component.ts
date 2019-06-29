@@ -14,12 +14,16 @@ export class SelectComponent implements OnInit {
   @Input() colunas = [];
   @Input() idUnica = 'sr_id';
   @Input() nome = 'vc_nome';
+  @Input() filtrarPor = 'vc_nome';
 
   colunasEspecificadas = false;
   valores = [];
+  filtrado = [];
   open = false;
   value = 'Selecione...'
   valueId = null;
+  _filtro = '';
+  timeOut = null;
 
   selecionar(selecionado:any){
     console.log(selecionado);
@@ -29,12 +33,20 @@ export class SelectComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.filtrado = this.dados;
+    
     if(this.colunas.length > 0){
       this.colunasEspecificadas = true;
     }else
     if(this.dados.length > 0) for(let dado in this.dados[0]) this.valores.push(dado);
 
+  }
+
+  filtro(){
+    if(this.timeOut) clearTimeout(this.timeOut);
+    this.timeOut =  setTimeout(()=> {
+     
+    },2000)
   }
 
 }

@@ -1,3 +1,7 @@
+td{
+    border:none !important;
+}
+
 tr:hover{
     background-color: grey;
     color:white;
