@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-select',
@@ -17,6 +18,8 @@ export class SelectComponent implements OnInit {
   @Input() filtrarPor = 'vc_nome';
   @Input() intervalo = 0;
 
+  @ViewChild('table',{static:false}) table: ElementRef;
+
   colunasEspecificadas = false;
   valores = [];
   filtrado = [];
@@ -26,8 +29,13 @@ export class SelectComponent implements OnInit {
   _filtro = '';
   timeOut = null;
 
+  @HostListener('document:click',['$event']) click(event){
+    console.log(event.target)
+    console.log(this.table.nativeElement)
+   if(!this.table.nativeElement.contains(event.target)) this.open = false;
+  }
+
   selecionar(selecionado:any){
-    console.log(selecionado);
     this.value = selecionado[this.idUnica];
     this.valueId = selecionado[this.nome];
     this.open = false;

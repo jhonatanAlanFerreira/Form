@@ -1,6 +1,6 @@
-<div class="tb" [class.border]="open">
+<div #table class="tb" [class.border]="open" (click)="open = true">
   <input [(ngModel)]="_filtro" (keyup)="filtro()" *ngIf="open"  class="form-control" type="text">
-  <input [(ngModel)]="value" style="cursor: pointer" (click)="open = true" *ngIf="!open"  class="form-control" readonly type="text">
+  <input [(ngModel)]="value" style="pointer-events: none" *ngIf="!open"  class="form-control" readonly type="text">
   <div *ngIf="!open" class="squareDown" (click)="open = true"></div>
   <table *ngIf="open" class="table">
     <thead style="width: 100%;display: inline-table;">
