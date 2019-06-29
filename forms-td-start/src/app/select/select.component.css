@@ -35,8 +35,9 @@ th{
 }
 
 .x{
-    color: rgba(255, 0, 0, 0.678);
+    color: red;
     position: absolute;
-    left: 305px;
-    top:25px;
+    left: 280px;
+    top:30px;
+    font-size: 8pt;
 }

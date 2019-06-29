@@ -1,7 +1,7 @@
-<div #table class="tb" [class.border]="open" (click)="open = true">
+<div #table  [title]='value' class="tb" [class.border]="open" (click)="open = true">
   <input [(ngModel)]="_filtro" (keyup)="filtro()" *ngIf="open"  class="form-control" style="margin-bottom:10px" type="text" placeholder="Pesquisar...">
   <input [(ngModel)]="value" style="pointer-events: none" *ngIf="!open"  class="form-control" readonly type="text">
-  <span class="x" *ngIf="open" (click)="_filtro = '';filtro()">x</span>
+  <span title="Limpar pesquisa" class="x" *ngIf="open" (click)="_filtro = '';filtro()">Limpar...</span>
   <div *ngIf="!open" class="squareDown"></div>
   <table *ngIf="open" class="table">
     <thead style="width: 100%;display: inline-table;">
