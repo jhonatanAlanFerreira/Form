@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   ]
 
   enviar(){
-    console.log(this.id);
+   alert("ID -> "+this.id);
   }
 
 ngOnInit(){
