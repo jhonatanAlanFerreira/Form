@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { SelectComponent } from './select/select.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   constructor( ){}
+
+  @ViewChild(SelectComponent,{static:false}) appSelect:SelectComponent;
 
   id = '';
 
@@ -31,7 +34,7 @@ export class AppComponent implements OnInit {
   }
 
 ngOnInit(){
- 
+ setTimeout(()=>this.appSelect.selecionar({vc_nome: 'carolina',sr_id: 80, teste:"testando"}),2000);//Teste evento selecionando
 }
 
 }

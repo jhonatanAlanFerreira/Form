@@ -20,6 +20,13 @@ export class SelectComponent implements OnInit {
   @Input() valor = ''; //Variável com two way binding em idUnica -> [(valor)]="id"
   @Input() largura = 200; //Largura em pixels usado no componente, usar somente números, default(200)
 
+  public selecionar(selecionado:{}){ //Pode ser usado por ViewChild para selecionar um objeto.
+    this.value = selecionado[this.nome];
+    this.valueId = selecionado[this.idUnica];
+    this.open = false;
+    this._valor.emit(this.valueId);
+  }
+
   @ViewChild('table',{static:false}) table: ElementRef;
 
   colunasEspecificadas = false;
@@ -35,13 +42,6 @@ export class SelectComponent implements OnInit {
 
   @HostListener('document:click',['$event']) click(event){
    if(!this.table.nativeElement.contains(event.target)) this.open = false;
-  }
-
-  selecionar(selecionado:any){
-    this.value = selecionado[this.nome];
-    this.valueId = selecionado[this.idUnica];
-    this.open = false;
-    this._valor.emit(this.valueId);
   }
 
   ngOnInit() {
