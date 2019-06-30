@@ -41,7 +41,7 @@ th{
     border-color:grey transparent transparent transparent;
     cursor: pointer;
     transform: rotate(0deg);
-    transition:all 500ms;
+    transition:all 300ms;
 }
 
 .squareUp{
@@ -54,6 +54,7 @@ th{
     border-color: transparent  transparent grey  transparent;
     transform: rotate(250deg);
     cursor: pointer;
+    transition:all 100ms;
 }
 
 .tabela{
