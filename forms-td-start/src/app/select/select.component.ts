@@ -8,7 +8,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, Output, 
 export class SelectComponent implements OnInit {
 
   constructor() { }
-  @Output('valorChange') _valor = new EventEmitter<string>();
+  @Output('valorChange') _valor = new EventEmitter<number>();
 
   @Input() dados = [];
   @Input() titulos = [];
@@ -18,7 +18,7 @@ export class SelectComponent implements OnInit {
   @Input() filtrarPor = 'vc_nome';
   @Input() intervalo = 0;
   @Input() valor = null;
-  @Input() largura = 300;
+  @Input() largura = 200;
 
   @ViewChild('table',{static:false}) table: ElementRef;
 
@@ -36,10 +36,10 @@ export class SelectComponent implements OnInit {
   }
 
   selecionar(selecionado:any){
-    this.value = selecionado[this.idUnica];
-    this.valueId = selecionado[this.nome];
+    this.value = selecionado[this.nome];
+    this.valueId = selecionado[this.idUnica];
     this.open = false;
-    this._valor.emit(this.value);
+    this._valor.emit(this.valueId);
   }
 
   ngOnInit() {

@@ -18,8 +18,9 @@ tr:hover{
     border: 1px solid grey;
 }
 
-th{
-    color:grey
+th,td{
+    text-align: center;
+    padding:3px;
 }
 
 .squareDown{

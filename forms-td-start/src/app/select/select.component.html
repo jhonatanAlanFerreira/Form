@@ -2,19 +2,20 @@
   <input [(ngModel)]="_filtro" (keyup)="filtro()" *ngIf="open"  class="form-control" style="margin-bottom:10px" type="text" placeholder="Pesquisar...">
   <input [(ngModel)]="value" style="pointer-events: none" *ngIf="!open"  class="form-control" readonly type="text">
   <div *ngIf="!open" [ngStyle]="{'left': largura-5+'px'}" class="squareDown"></div>
-  <table *ngIf="open" class="table">
-    <thead style="width: 100%;display: inline-table;">
-      <th *ngFor="let coluna of titulos"><u>{{coluna}}</u></th>
+  <div style="max-height: 200px;overflow: auto;">
+  <table style="width: 100%" *ngIf="open">
+    <thead>
+      <th style="color: grey" *ngFor="let coluna of titulos"><u>{{coluna}}</u></th>
     </thead>
-    <tbody *ngIf="!colunasEspecificadas" style="display: block;overflow-y: auto; max-height:200px">
+    <tbody *ngIf="!colunasEspecificadas">
       <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
-        <td [ngStyle]="{'width': largura+'px'}" *ngFor="let valor of valores">{{dado[valor]}}</td>
+        <td *ngFor="let valor of valores">{{dado[valor]}}</td>
       </tr>
     </tbody>
-    <tbody *ngIf="colunasEspecificadas" style="display: block;overflow-y: auto; max-height:200px">
+    <tbody *ngIf="colunasEspecificadas">
       <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
-        <td [ngStyle]="{'width': largura+'px'}" *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
+        <td *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 </div>

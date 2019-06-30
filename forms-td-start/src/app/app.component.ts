@@ -12,18 +12,18 @@ export class AppComponent implements OnInit {
   nome = null;
 
   pessoas = [
-    {nome: 'jhonatan',idade: 25, teste:"testando"},
-    {nome: 'alan',idade: 34, teste:"testando"},
-    {nome: 'bertini',idade: 43, teste:"testando"},
-    {nome: 'ferreira',idade: 56, teste:"testando"},
-    {nome: 'jessica',idade: 56, teste:"testando"},
-    {nome: 'carolina',idade: 80, teste:"testando"},
-    {nome: 'jhonatan',idade: 25, teste:"testando"},
-    {nome: 'alan',idade: 34, teste:"testando"},
-    {nome: 'bertini',idade: 43, teste:"testando"},
-    {nome: 'ferreira',idade: 56, teste:"testando"},
-    {nome: 'jessica',idade: 56, teste:"testando"},
-    {nome: 'carolina',idade: 80, teste:"testando"}
+    {vc_nome: 'jhonatan',sr_id: 25, teste:"testando"},
+    {vc_nome: 'alan',sr_id: 34, teste:"testando"},
+    {vc_nome: 'bertini',sr_id: 43, teste:"testando"},
+    {vc_nome: 'ferreira',sr_id: 56, teste:"testando"},
+    {vc_nome: 'jessica',sr_id: 56, teste:"testando"},
+    {vc_nome: 'carolina',sr_id: 80, teste:"testando"},
+    {vc_nome: 'jhonatan',sr_id: 25, teste:"testando"},
+    {vc_nome: 'alan',sr_id: 34, teste:"testando"},
+    {vc_nome: 'bertini',sr_id: 43, teste:"testando"},
+    {vc_nome: 'ferreira',sr_id: 56, teste:"testando"},
+    {vc_nome: 'jessica',sr_id: 56, teste:"testando"},
+    {vc_nome: 'carolina',sr_id: 80, teste:"testando"}
   ]
 
   enviar(){

@@ -5,13 +5,10 @@
 
         <app-select 
         [dados]='pessoas' 
-        [titulos]='["Nome"]'
-        [colunas]='["nome"]'
         [(valor)]="nome"
-        largura='200'
-        idUnica='nome'
-        nome='nome'
-        filtrarPor='nome'></app-select>
+        [titulos]="['Id','Nome']"
+        [colunas]="['sr_id','vc_nome']"
+        ></app-select>
         
       </div>
     </div>
