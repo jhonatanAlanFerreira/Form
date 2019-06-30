@@ -17,7 +17,7 @@ export class SelectComponent implements OnInit {
   @Input() nome:string = 'vc_nome'; //Chave com o nome a exibir no lugar do select quando selecionado. Default('vc_nome')
   @Input() filtros:string[] = ['vc_nome']; //Array com as chaves que entram na busca por pesquisa. Default(['vc_nome'])
   @Input() intervalo = 0; //Intervalo a esperar antes de fazer a busca, é zerado enquanto o usuário estiver digitando (Melhorar desempenho em arrays grandes). Default(0)
-  @Input() valor = null; //Variável com two way binding em idUnica -> [(valor)]="id"
+  @Input() valor = ''; //Variável com two way binding em idUnica -> [(valor)]="id"
   @Input() largura = 200; //Largura em pixels usado no componente, usar somente números, default(200)
 
   @ViewChild('table',{static:false}) table: ElementRef;

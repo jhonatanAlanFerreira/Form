@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
 
   constructor( ){}
 
-  id = null;
+  id = '';
 
   pessoas = [
     {vc_nome: 'jhonataasdasdasdasdasfdsasfdsfasfn',sr_id: 25, teste:"testando"},
