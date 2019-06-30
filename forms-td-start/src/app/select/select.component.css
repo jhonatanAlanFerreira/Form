@@ -32,12 +32,27 @@ th{
 }
 
 .squareDown{
+    visibility: visible;
     pointer-events: none;
     content: " ";
     top: 45%;
     position: absolute;
     border: 7px solid;
     border-color:grey transparent transparent transparent;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition:all 500ms;
+}
+
+.squareUp{
+    visibility: hidden;
+    pointer-events: none;
+    content: " ";
+    top: 45%;
+    position: absolute;
+    border: 7px solid;
+    border-color: transparent  transparent grey  transparent;
+    transform: rotate(250deg);
     cursor: pointer;
 }
 
