@@ -3,12 +3,8 @@ td{
 }
 
 tr:hover{
-    background-color: grey;
+    background-color: grey !important;
     color:white;
-}
-
-tr{
-   box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.322);
 }
 
 .tb{

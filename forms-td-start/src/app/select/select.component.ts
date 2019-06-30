@@ -48,7 +48,7 @@ export class SelectComponent implements OnInit {
     this.qtdTitulos = this.titulos.length;
     this.qtdColunas = this.colunas.length;
 
-    this.filtrado = this.dados;
+    this.filtro();
     
     if(this.colunas.length > 0){
       this.colunasEspecificadas = true;
@@ -60,8 +60,18 @@ export class SelectComponent implements OnInit {
   filtro(){
     if(this.timeOut) clearTimeout(this.timeOut);
     this.timeOut =  setTimeout(() => {
+      
       this.filtrado = [];
-      this.filtros.forEach(filtro => this.filtrado.push(...this.dados.filter((item:any) => item[filtro].toString().indexOf(this._filtro) != -1)));
+      var i = 0;
+      this.filtros.forEach(filtro => {
+        let _filtro = this.dados.filter((item:any) => {
+           if(item[filtro].toString().indexOf(this._filtro) != -1){
+            item['index'] = i++;
+            return true;
+           };
+        });
+        this.filtrado.push(..._filtro);
+      });
     },+this.intervalo);
   }
 
