@@ -30,6 +30,8 @@ export class SelectComponent implements OnInit {
   valueId = null;
   _filtro = '';
   timeOut = null;
+  qtdTitulos:number;
+  qtdColunas:number;
 
   @HostListener('document:click',['$event']) click(event){
    if(!this.table.nativeElement.contains(event.target)) this.open = false;
@@ -43,6 +45,9 @@ export class SelectComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.qtdTitulos = this.titulos.length;
+    this.qtdColunas = this.colunas.length;
+
     this.filtrado = this.dados;
     
     if(this.colunas.length > 0){

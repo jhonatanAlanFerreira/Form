@@ -3,19 +3,19 @@
     type="text" placeholder="Pesquisar...">
   <input [(ngModel)]="value" style="pointer-events: none" *ngIf="!open" class="form-control" readonly type="text">
   <div *ngIf="!open" [ngStyle]="{'left': largura-5+'px'}" class="squareDown"></div>
+  <div *ngIf="open">
+    <th style="color: grey" [ngStyle]="{'width': largura/qtdTitulos+'px'}" *ngFor="let coluna of titulos"><u>{{coluna}}</u></th>
+  </div>
   <div style="max-height: 200px;overflow: auto;">
-    <table style="width: 100%" *ngIf="open">
-      <thead>
-        <th style="color: grey" *ngFor="let coluna of titulos"><u>{{coluna}}</u></th>
-      </thead>
+    <table class="tabela" *ngIf="open">
       <tbody *ngIf="!colunasEspecificadas">
         <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
-          <td *ngFor="let valor of valores">{{dado[valor]}}</td>
+          <td [ngStyle]="{'width': largura/qtdColunas-10+'px'}" *ngFor="let valor of valores">{{dado[valor]}}</td>
         </tr>
       </tbody>
       <tbody *ngIf="colunasEspecificadas">
         <tr style="cursor: pointer" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
-          <td *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
+          <td [ngStyle]="{'width': largura/qtdColunas-15+'px'}" *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
         </tr>
       </tbody>
     </table>

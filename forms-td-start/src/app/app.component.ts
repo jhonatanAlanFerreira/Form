@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   id = null;
 
   pessoas = [
-    {vc_nome: 'jhonatan',sr_id: 25, teste:"testando"},
+    {vc_nome: 'jhonataasdasdasdasdasfdsasfdsfasfn',sr_id: 25, teste:"testando"},
     {vc_nome: 'alan',sr_id: 34, teste:"testando"},
     {vc_nome: 'bertini',sr_id: 43, teste:"testando"},
     {vc_nome: 'ferreira',sr_id: 56, teste:"testando"},

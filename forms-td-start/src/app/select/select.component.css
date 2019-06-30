@@ -7,6 +7,10 @@ tr:hover{
     color:white;
 }
 
+tr{
+   box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.356);
+}
+
 .tb{
     cursor: pointer;
     padding: 10px 5px 10px 10px;
@@ -21,6 +25,13 @@ tr:hover{
 th,td{
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     padding:3px;
+    word-wrap:break-word;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+}
+
+th{
+    background-color: rgba(128, 128, 128, 0.404);
 }
 
 .squareDown{
@@ -31,4 +42,9 @@ th,td{
     border: 7px solid;
     border-color:grey transparent transparent transparent;
     cursor: pointer;
+}
+
+.tabela{
+    width: 100%;
+    table-layout:fixed;
 }
