@@ -10,15 +10,15 @@ export class SelectComponent implements OnInit {
   constructor() { }
   @Output('valorChange') _valor = new EventEmitter<number>();
 
-  @Input() dados = [];
-  @Input() titulos = [];
-  @Input() colunas = [];
-  @Input() idUnica = 'sr_id';
-  @Input() nome = 'vc_nome';
-  @Input() filtros = ['vc_nome'];
-  @Input() intervalo = 0;
-  @Input() valor = null;
-  @Input() largura = 200;
+  @Input() dados:{}[] = []; //Array com os dados a exibir na tabela.
+  @Input() titulos:string[] = []; //Array com as titulos a exibir na th (Opcional).
+  @Input() colunas:string[] = []; //Array com as chaves dos dados que serão exibidas em colunas, caso não especificadas, todas seram exibidas.
+  @Input() idUnica:string = 'sr_id'; //Chave principal que deve ser enviado ao banco quando salvar. Default('sr_id')
+  @Input() nome:string = 'vc_nome'; //Chave com o nome a exibir no lugar do select quando selecionado. Default('vc_nome')
+  @Input() filtros:string[] = ['vc_nome']; //Array com as chaves que entram na busca por pesquisa. Default(['vc_nome'])
+  @Input() intervalo = 0; //Intervalo a esperar antes de fazer a busca, é zerado enquanto o usuário estiver digitando (Melhorar desempenho em arrays grandes). Default(0)
+  @Input() valor = null; //Variável com two way binding em idUnica -> [(valor)]="id"
+  @Input() largura = 200; //Largura em pixels usado no componente, usar somente números, default(200)
 
   @ViewChild('table',{static:false}) table: ElementRef;
 
@@ -62,11 +62,11 @@ export class SelectComponent implements OnInit {
     this.timeOut =  setTimeout(() => {
       
       this.filtrado = [];
-      var i = 0;
+      var i = 0; //Usado para efeito striped em tabela
       this.filtros.forEach(filtro => {
         let _filtro = this.dados.filter((item:any) => {
            if(item[filtro].toString().indexOf(this._filtro) != -1){
-            item['index'] = i++;
+            item['index'] = i++; //Usado para efeito striped em tabela
             return true;
            };
         });
