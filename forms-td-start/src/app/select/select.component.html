@@ -4,7 +4,7 @@
   <input [(ngModel)]="value" style="pointer-events: none" *ngIf="!open" class="form-control" readonly type="text">
   <div *ngIf="!open" [ngStyle]="{'left': largura-5+'px'}" class="squareDown"></div>
   <div *ngIf="open">
-    <th style="color: grey" [ngStyle]="{'width': largura/qtdTitulos+'px'}" *ngFor="let coluna of titulos">{{coluna}}</th>
+    <th style=" border-bottom:solid 4px black;" [ngStyle]="{'width': largura/qtdTitulos+'px'}" *ngFor="let coluna of titulos">{{coluna}}</th>
   </div>
   <div style="max-height: 200px;overflow: auto;">
     <table class="tabela" *ngIf="open">

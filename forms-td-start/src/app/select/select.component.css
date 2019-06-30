@@ -27,7 +27,8 @@ th,td{
 }
 
 th{
-    background-color: rgba(128, 128, 128, 0.404);
+    background-color: rgba(128, 128, 128, 0.700);
+    color: rgb(92, 92, 92);
 }
 
 .squareDown{
