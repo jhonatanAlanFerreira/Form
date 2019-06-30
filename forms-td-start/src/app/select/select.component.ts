@@ -15,7 +15,7 @@ export class SelectComponent implements OnInit {
   @Input() colunas = [];
   @Input() idUnica = 'sr_id';
   @Input() nome = 'vc_nome';
-  @Input() filtrarPor = 'vc_nome';
+  @Input() filtros = ['vc_nome'];
   @Input() intervalo = 0;
   @Input() valor = null;
   @Input() largura = 200;
@@ -54,8 +54,9 @@ export class SelectComponent implements OnInit {
 
   filtro(){
     if(this.timeOut) clearTimeout(this.timeOut);
-    this.timeOut =  setTimeout(()=> {
-     this.filtrado = this.dados.filter((item:any) => item[this.filtrarPor].indexOf(this._filtro) != -1);
+    this.timeOut =  setTimeout(() => {
+      this.filtrado = [];
+      this.filtros.forEach(filtro => this.filtrado.push(...this.dados.filter((item:any) => item[filtro].toString().indexOf(this._filtro) != -1)));
     },+this.intervalo);
   }
 
