@@ -6,16 +6,16 @@
   <div *ngIf="open">
     <th style=" border-bottom:solid 4px black;" [ngStyle]="{'width': largura/qtdTitulos+'px'}" *ngFor="let coluna of titulos">{{coluna}}</th>
   </div>
-  <div style="max-height: 200px;overflow: auto;">
+  <div [ngClass]="{'tamanhoP': !open,'tamanhoG': open}">
     <table class="tabela" *ngIf="open">
       <tbody *ngIf="!colunasEspecificadas">
         <tr style="cursor: pointer" [ngStyle]="{'backgroundColor': dado.index%2==0?'rgba(128, 128, 128, 0.400)':none}" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
-          <td [ngStyle]="{'width': largura/qtdColunas-15+'px'}" *ngFor="let valor of valores">{{dado[valor]}}</td>
+          <td [ngStyle]="{'width': largura/qtdColunas-20+'px'}" *ngFor="let valor of valores">{{dado[valor]}}</td>
         </tr>
       </tbody>
       <tbody *ngIf="colunasEspecificadas">
         <tr style="cursor: pointer" [ngStyle]="{'backgroundColor': dado.index%2==0?'rgba(128, 128, 128, 0.400)':none}" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
-          <td [ngStyle]="{'width': largura/qtdColunas-15+'px'}" *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
+          <td [ngStyle]="{'width': largura/qtdColunas-20+'px'}" *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
         </tr>
       </tbody>
     </table>

@@ -45,3 +45,15 @@ th{
     width: 100%;
     table-layout:fixed;
 }
+
+.tamanhoG{
+    height: 200px;
+    overflow: auto;
+    transition: 200ms;
+}
+
+.tamanhoP{
+    height: 0px;
+    overflow: auto;
+    transition: 200ms;
+}
