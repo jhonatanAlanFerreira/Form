@@ -9,13 +9,13 @@
   <div [ngClass]="{'tamanhoP': !open,'tamanhoG': open}">
     <table class="tabela" *ngIf="open">
       <tbody *ngIf="!colunasEspecificadas">
-        <tr style="cursor: pointer" [ngStyle]="{'backgroundColor': dado.index%2==0?'rgba(128, 128, 128, 0.400)':none}" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
-          <td [ngStyle]="{'width': largura/qtdColunas-20+'px'}" *ngFor="let valor of valores">{{dado[valor]}}</td>
+        <tr style="cursor: pointer" [ngStyle]="{'backgroundColor': dado.index%2==0?'rgba(128, 128, 128, 0.35)':none}" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
+          <td [ngStyle]="{'width': qtdTitulos>1? largura/qtdColunas-20+'px':'100%'}" *ngFor="let valor of valores">{{dado[valor]}}</td>
         </tr>
       </tbody>
       <tbody *ngIf="colunasEspecificadas">
-        <tr style="cursor: pointer" [ngStyle]="{'backgroundColor': dado.index%2==0?'rgba(128, 128, 128, 0.400)':none}" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
-          <td [ngStyle]="{'width': largura/qtdColunas-20+'px'}" *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
+        <tr style="cursor: pointer" [ngStyle]="{'backgroundColor': dado.index%2==0?'rgba(128, 128, 128, 0.35)':none}" (click)='selecionar(dado)' *ngFor="let dado of filtrado">
+          <td [ngStyle]="{'width': qtdColunas>1? largura/qtdColunas-20+'px':'100%'}" *ngFor="let coluna of colunas">{{dado[coluna]}}</td>
         </tr>
       </tbody>
     </table>
