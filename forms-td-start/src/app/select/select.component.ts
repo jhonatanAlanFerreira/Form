@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, Output } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -8,6 +8,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, Output }
 export class SelectComponent implements OnInit {
 
   constructor() { }
+  @Output('valorChange') _valor = new EventEmitter<string>();
 
   @Input() dados = [];
   @Input() titulos = [];
@@ -16,6 +17,7 @@ export class SelectComponent implements OnInit {
   @Input() nome = 'vc_nome';
   @Input() filtrarPor = 'vc_nome';
   @Input() intervalo = 0;
+  @Input() valor = null;
 
   @ViewChild('table',{static:false}) table: ElementRef;
 
@@ -23,7 +25,7 @@ export class SelectComponent implements OnInit {
   valores = [];
   filtrado = [];
   open = false;
-  value = 'Selecione...'
+  value = 'Selecione...';
   valueId = null;
   _filtro = '';
   timeOut = null;
@@ -36,6 +38,7 @@ export class SelectComponent implements OnInit {
     this.value = selecionado[this.idUnica];
     this.valueId = selecionado[this.nome];
     this.open = false;
+    this._valor.emit(this.value);
   }
 
   ngOnInit() {
