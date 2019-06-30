@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
 
   constructor( ){}
 
-  nome = null;
+  id = null;
 
   pessoas = [
     {vc_nome: 'jhonatan',sr_id: 25, teste:"testando"},
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   ]
 
   enviar(){
-    console.log(this.nome);
+    console.log(this.id);
   }
 
 ngOnInit(){
