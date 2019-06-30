@@ -18,6 +18,8 @@ export class SelectComponent implements OnInit {
   @Input() filtrarPor = 'vc_nome';
   @Input() intervalo = 0;
   @Input() valor = null;
+  @Input() largura = 300;
+  @Input() tituloCor = 'grey';
 
   @ViewChild('table',{static:false}) table: ElementRef;
 

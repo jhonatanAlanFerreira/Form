@@ -9,7 +9,6 @@ tr:hover{
 
 .tb{
     cursor: pointer;
-    width: 300px; 
     padding: 10px 5px 10px 10px;
     border-radius: 2%;
 }
@@ -19,25 +18,13 @@ tr:hover{
     border: 1px solid grey;
 }
 
-th{
-    color: grey;
-}
 
 .squareDown{
     pointer-events: none;
     content: " ";
-    left: 295px;
     top: 45%;
     position: absolute;
     border: 7px solid;
     border-color:grey transparent transparent transparent;
     cursor: pointer;
-}
-
-.x{
-    color: red;
-    position: absolute;
-    left: 280px;
-    top:30px;
-    font-size: 8pt;
 }
