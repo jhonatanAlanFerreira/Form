@@ -60,7 +60,6 @@ export class SelectComponent implements OnInit {
   filtro(){
     if(this.timeOut) clearTimeout(this.timeOut);
     this.timeOut =  setTimeout(() => {
-      
       this.filtrado = [];
       var i = 0; //Usado para efeito striped em tabela
       this.filtros.forEach(filtro => {
