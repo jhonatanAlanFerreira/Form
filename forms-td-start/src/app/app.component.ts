@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
   constructor( ){}
 
-  @ViewChild(SelectComponent,{static:false}) appSelect:SelectComponent;
+  @ViewChild('el1',{static:false}) appSelect:SelectComponent;
 
   id = '';
 
